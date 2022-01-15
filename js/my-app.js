@@ -38,7 +38,7 @@ $$(document).on('pageInit', function (e) {
 
 // Option 2. Using live 'pageInit' event handlers for each page
 $(document).on('click', '.link[data-page="github"]', function (e) {
-    myApp.alert('http://github.com/harddevelop');
+    myApp.alert('http://github.com/bitstuffing');
 })
 $(document).on('click', '.link[data-page="gitlab"]', function (e) {
     myApp.alert('http://gitlab.com/hard.develop');
@@ -55,7 +55,7 @@ $.ajaxSetup({
 */
 
 function processResponse(obj){
-	//alert(obj.feed.author[0].name.$t);
+	//console.log(obj.feed.author[0].name.$t);
 	for (var i = 0, len = obj.feed.entry.length; i < len; i++) {
 		proccessJsonEntry(obj.feed.entry[i]);
 	}
@@ -75,12 +75,12 @@ function processResponse(obj){
 }
 
 function proccessJsonEntry(entry){
-	/*alert("id: "+entry.id.$t);
-	alert("published: "+entry.published.$t);
-	alert("updated: "+entry.updated.$t);
-	alert("title: "+entry.title.$t);
-	alert("content: "+entry.content.$t);
-	alert("link: "+entry.link.$t);*/
+	/*console.log("id: "+entry.id.$t);
+	console.log("published: "+entry.published.$t);
+	console.log("updated: "+entry.updated.$t);
+	console.log("title: "+entry.title.$t);
+	console.log("content: "+entry.content.$t);
+	console.log("link: "+entry.link.$t);*/
 	var html = "<article class='update-box'>";
 	html += "<h3 class='articleTitleH1' onclick=\"showNext($(this));\">"+entry.title.$t+"</h3>";
 	var date = entry.published.$t;

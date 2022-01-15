@@ -1,11 +1,209 @@
 <html>
-	<body>
-		<script type="text/javascript">
-			if (screen.width <= 699) {
-				document.location = "mobile.html";
-			}else{
-				document.location = "desktop.html";
-			}
-		</script>
+	<head>
+		<title>@bitstuffing blog's</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main-new.css" />
+	</head>
+	<body class="is-preload">
+
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header" class="alt">
+				<a name="home" href="index.html" class="logo"><strong>bitstuffing.github.io</strong> <span>by @bitstuffing</span></a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+			<!-- Menu -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="/">Home</a></li>
+					<li><a href="/mobile.html">Old site - (mobile)</a></li>
+					<li><a href="/desktop.html">Old site - (desktop)</a></li>
+				</ul>
+				<ul class="actions stacked">
+					<li><a href="https://bitstuffing.github.io/securecv" class="button primary fit">Who am I</a></li>
+				</ul>
+			</nav>
+
+			<!-- articles -->
+
+			<div id="main" class="alt">
+
+				<!-- articles container - "section" -->
+				<section id="one" class="tiles"></section>
+
+				<div id="pagination" class="content" style="display:none;">
+					<input type="hidden" value="1" id="pagination-page" />
+					<ul id="pagination-actions" class="actions" >
+						<li id="pagination-left" ><a onclick="paginateLess();" href="#prev" class="button prev scrolly primary">Prev</a></li>
+						<li id="pagination-right" ><a onclick="paginateMore();" href="#next" class="button next scrolly primary">Next</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+			<!-- Start Loading
+		  ===================================-->
+		  <div class="loading">
+				<div class="sk-folding-cube">
+					<div class="sk-cube1 sk-cube"></div>
+					<div class="sk-cube2 sk-cube"></div>
+					<div class="sk-cube4 sk-cube"></div>
+					<div class="sk-cube3 sk-cube"></div>
+				</div>
+		  </div>
+		  <!-- End Loading ==================-->
+
+
+
+			<footer id="footer">
+				<div class="inner">
+
+					<div class="content">
+						<table class="apps">
+							<thead>
+								<th colspan="6">Take a look on some of my opensource apps...</th>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+											<h3><a href="https://github.com/lemoncrest/x-pi-one-launcher" class="">LemonPI &amp; X-Pi ONE Launcher</a></h3>
+									</td>
+									<td>
+											<time class="published" datetime="2020-03-01">March 01, 2020</time>
+									</td>
+									<td>
+										<a href="https://github.com/lemoncrest/x-pi-one-launcher" class=""><img src="https://github.com/lemoncrest/x-pi-one-launcher/blob/master/assert/wallpapers/pixelart1.jpg?raw=true" alt="X-PI ONE Launcher"></a>
+									</td>
+
+								</tr>
+
+								<tr>
+									<td>
+											<h3><a href="https://github.com/lemoncrest/kelboy-launcher" class="">Kelboy Launcher</a></h3>
+									</td>
+									<td>
+											<time class="published" datetime="2020-06-01">June 01, 2020</time>
+									</td>
+									<td>
+										<a href="https://github.com/lemoncrest/kelboy-launcher" class=""><img src="https://github.com/lemoncrest/kelboy-launcher/blob/master/resources/graphics/background-br-total.png?raw=true" alt="Kelboy Launcher"></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+											<h3><a href="https://github.com/lemoncrest/kelboy-launcher" class="">ESP32 Launcher</a></h3>
+										</td>
+										<td>
+											<time class="published" datetime="2019-02-02">Feb 02, 2019</time>
+										</td>
+										<td>
+										<a href="https://github.com/lemoncrest/kelboy-launcher" class=""><img src="https://cdn.hackaday.io/images/2914311560950374389.jpg" alt="ESP32 Launcher"></a>
+									</td>
+								</tr>
+
+								<tr>
+									<td>
+											<h3><a href="https://github.com/lemoncrest/esp32touch" class="">ESP32 Capacitive Touch</a></h3>
+										</td>
+										<td>
+											<time class="published" datetime="2019-10-21">October 21, 2019</time>
+										</td>
+										<td>
+											<a href="https://github.com/lemoncrest/esp32touch" class=""><img src="https://cdn.xenarc.com/images/C/capacitive-touch-screen.jpg" alt="ESP32 Touch"></a>
+										</td>
+								</tr>
+
+		            <tr>
+									<td>
+											<h3><a href="https://github.com/bitstuffing/remotesession" class="">RemoteSession</a></h3>
+										</td>
+										<td>
+											<time class="published" datetime="2017-04-02">April 02, 2017</time>
+										</td>
+										<td>
+											<a href="https://github.com/bitstuffing/remotesession" class=""><img src="https://camo.githubusercontent.com/4f8574fdf0ac1e4b4a41b33a869098ba8df0307f/687474703a2f2f692e696d6775722e636f6d2f6c4942336f5a482e706e67" alt=""></a>
+										</td>
+								</tr>
+
+								<tr>
+									<td>
+											<h3><a href="https://github.com/bitstuffing/kivy-downloader" class="">Kivy Downloader</a></h3>
+									</td>
+									<td>
+											<time class="published" datetime="2015-11-22">March 31, 2016</time>
+									</td>
+									<td>
+										<a href="https://github.com/bitstuffing/kivy-downloader" class=""><img src="https://camo.githubusercontent.com/1d3a5d6157eda4895ded903db99452cad71a71d7/68747470733a2f2f332e62702e626c6f6773706f742e636f6d2f2d48426e532d3264796762382f56767a2d33574e704b57492f414141414141414141534d2f67464d3936414f754e394d4c76637a456e756561432d636c795f466746385555772f733332302f666f726d312e706e67" alt=""></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+											<h3><a href="https://github.com/bitstuffing/bitstuffing.github.io/raw/master/assets/org.xbmc.kore.apk" class="">Kore (fork) - TVBOX support</a></h3>
+									</td>
+									<td>
+											<time class="published" datetime="2016-02-26">February 26, 2016</time>
+									</td>
+									<td>
+										<a href="https://github.com/bitstuffing/bitstuffing.github.io/raw/master/assets/org.xbmc.kore.apk" class=""><img src="https://f-droid.org/repo/org.xbmc.kore/en-US/icon.png" alt=""></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+											<h3><a href="https://github.com/bitstuffing/jukebox/archive/master.zip" class="">Jukebox addon (Kodi)</a></h3>
+										</td>
+										<td>
+											<time class="published" datetime="2015-11-22">November 22, 2015</time>
+										</td>
+										<td>
+										<a href="https://github.com/bitstuffing/jukebox/archive/master.zip" class=""><img src="https://github.com/bitstuffing/jukebox/raw/master/icon.png" alt=""></a>
+									</td>
+
+								</tr>
+		              <tr>
+									<td>
+											<h3><a href="https://github.com/bitstuffing/tvbox/archive/master.zip" class="">TVBOX addon (Kodi)</a></h3>
+										</td>
+										<td>
+											<time class="published" datetime="2015-11-11">November 11, 2015</time>
+										</td>
+
+										<td>
+										<a href="https://github.com/bitstuffing/tvbox/archive/master.zip" class=""><img src="https://raw.githubusercontent.com/bitstuffing/tvbox/master/icon.png" alt="TVBOX icon"></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+					<p>
+						<ul class="icons">
+							<li><a href="https://twitter.com/bitstuffing" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="https://instagram.com/bitstuffing" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="https://github.com/bitstuffing" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</p>
+					<ul class="copyright">
+						<li>This web is a responsive site page without server logic hosting or cookies, a simple modern web solution.</li>
+						<li>2022 © bitstuffing.github.io - <a href="https://creativecommons.org/licenses/by/4.0/">CC 4.0</a></li>
+					</ul>
+
+				</div>
+			</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/jquery.scrolly.min.js"></script>
+			<script src="/assets/js/jquery.scrollex.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/main-new.js"></script>
+			<script src="/assets/js/util-new.js"></script>
 	</body>
 </html>
