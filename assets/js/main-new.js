@@ -524,26 +524,33 @@ function buildArticle(id){
 
 	var image = "images/pic11.jpg"; //default if not found
 	var content = $("#"+id).html();
-	try{
-		extension = ""
-		if(content.indexOf(".jpg\"")!=-1){
-			extension = ".jpg\"";
-		}else if(content.indexOf(".gif\"")!=-1){
-			extension = ".gif\"";
-		}else if(content.indexOf(".png\"")!=-1){
-			extension = ".png\"";
-		}
-		if(extension.length>0){
-			img = content.substring(0,parseInt(content.indexOf(extension)+4));
-			img = img.substring(img.lastIndexOf("http")).replace("\"","");
-			image = img;
-		}else{
-			image = "images/pic11.jpg";
-		}
-	}catch(e){
-		image = "images/pic11.jpg"; //default if not found
-	}
 
+	try{
+		//use regex to get img and map to extract src origin
+		image = content.match(/<img [^>]*src="[^"]*"[^>]*>/gm).map(x => x.replace(/.*src="([^"]*)".*/, '$1'))[0];
+	}catch(ex){
+			//use simple & classic algorithm
+			try{
+				extension = ""
+				if(content.indexOf(".jpg\"")!=-1){
+					extension = ".jpg\"";
+				}else if(content.indexOf(".gif\"")!=-1){
+					extension = ".gif\"";
+				}else if(content.indexOf(".png\"")!=-1){
+					extension = ".png\"";
+				}
+				if(extension.length>0){
+					img = content.substring(0,parseInt(content.indexOf(extension)+4));
+					img = img.substring(img.lastIndexOf("http")).replace("\"","");
+					image = img;
+				}else{
+					image = "images/pic11.jpg";
+				}
+			}catch(e){
+				image = "images/pic11.jpg"; //default if not found
+			}
+	}
+	//build article
 	var article = "";
 	article += '<div id="article_loaded" class="inner">';
 	article += '<header class="major">';
@@ -553,8 +560,9 @@ function buildArticle(id){
 	article += content;
 	article += '<p><br /><input type="submit" value="Back to articles" class="primary" onclick="showAllArticles();"></p>';
 	article += '</div>';
-
+	//write article
 	$("section#one").append(article);
+	//rebuild css properties of container
 	$("#one").removeClass("tiles");
 	$(".is-transitioning").removeClass("is-transitioning");
 	$('html,body').animate({ scrollTop : $("a[name='home']").offset().top }, 'fast');
