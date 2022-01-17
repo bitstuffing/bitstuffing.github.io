@@ -4163,3 +4163,11 @@ input, select, textarea {
 		    opacity: 0;
 		  }
 		}
+/* FIX for Centered and resized big imgs */
+img{
+	max-width: 100% !important;
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
