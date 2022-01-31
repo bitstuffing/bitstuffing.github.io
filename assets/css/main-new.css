@@ -3446,6 +3446,10 @@ input, select, textarea {
 
 		@media screen and (max-width: 480px) {
 
+			#header .logo {
+				padding: 1em;
+			}
+
 			#header .logo span {
 				display: none;
 			}
